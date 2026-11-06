@@ -12,6 +12,8 @@
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}html{scroll-behavior:smooth}</style>
 </head>
 <body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
@@ -148,7 +150,7 @@ section{padding-top:clamp(72px,10vw,128px)}
 .film video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
 .film figcaption,.cred{font:italic 400 16px var(--serif);color:var(--muted);margin-top:10px;text-align:center}
 .looks{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,32px);margin-top:clamp(40px,6vw,72px)}
-.look{margin:0;display:grid;gap:10px;align-content:start}
+.look{margin:0;display:grid;gap:10px;align-content:start;min-width:0}
 .look img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:999px 999px 0 0;border:1px solid var(--hair);padding:7px;cursor:zoom-in;transition:transform .3s}
 .look img:hover{transform:translateY(-4px)}
 .look .cap{display:block;text-align:center}
@@ -177,6 +179,26 @@ section{padding-top:clamp(72px,10vw,128px)}
 .spread:hover img{border-color:var(--gold)}
 .spread span{display:block;font:400 10.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:10px}
 .hint{font:italic 400 16px var(--serif);color:var(--muted);text-align:right;margin-top:6px}
+
+/* sketch to runway, behind the scenes, bodysuit */
+.sub{margin-top:clamp(56px,8vw,96px)}
+.sub .subhead{text-align:center;margin-bottom:clamp(24px,3vw,36px)}
+.sub .subhead h3{font:400 clamp(32px,4vw,52px)/1.05 var(--display);margin-top:8px}
+.sub .subhead p{font:italic 400 18px var(--serif);color:var(--muted);margin-top:6px}
+.paper{margin:0}
+.paper img{display:block;width:100%;background:#fff;padding:clamp(6px,1vw,12px);border:1px solid var(--hair);cursor:zoom-in}
+.paper figcaption{font:italic 400 16px var(--serif);color:var(--muted);margin-top:8px;text-align:center}
+.flats{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.4vw,32px);margin-top:clamp(14px,2.4vw,32px);align-items:start}
+.bts{display:grid;grid-template-columns:repeat(2,minmax(0,300px));justify-content:center;gap:clamp(16px,3vw,48px)}
+.bts figure{margin:0}
+.bts video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;border-radius:999px 999px 0 0;border:1px solid var(--hair);padding:7px}
+.bts figcaption{font:italic 400 16px var(--serif);color:var(--muted);margin-top:8px;text-align:center}
+.bs{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:clamp(14px,2.4vw,32px);align-items:start}
+.bs .tall{grid-row:span 2}
+.bs > .paper:nth-child(2){grid-column:2/4}
+.bs .stack{grid-column:2/4;display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.4vw,32px);align-items:start}
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.facts span{font:400 10.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--hair);color:var(--gold);padding:6px 12px;border-radius:999px}
 
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:60;background:rgba(25,5,10,.94);display:grid;place-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) 16px calc(20px + env(safe-area-inset-bottom,0px))}
@@ -213,6 +235,10 @@ section{padding-top:clamp(72px,10vw,128px)}
   .edu,.skills{grid-template-columns:1fr}
   .looks{grid-template-columns:repeat(2,1fr)}
   .show,.merge{grid-template-columns:1fr}
+  .flats,.bs{grid-template-columns:1fr}
+  .bs .tall{grid-row:auto}
+  .bs > .paper:nth-child(2),.bs .stack{grid-column:auto}
+  .bs .stack{grid-template-columns:1fr}
   .trio{grid-template-columns:1fr 1fr}
   .trio figure:last-child{grid-column:1/-1;max-width:420px;justify-self:center;width:100%}
   .arches{grid-template-columns:repeat(3,1fr)}
@@ -248,7 +274,7 @@ section{padding-top:clamp(72px,10vw,128px)}
 <div class="inner">
   <header class="top">
     <span class="brand">Nabeela Zawahir</span>
-    <nav aria-label="Sections"><a href="#collection">The Collection</a><a href="#merge">Merge</a><a href="#runway">Reels</a><a href="#brands">Brand work</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Sections"><a href="#collection">The Collection</a><a href="#merge">Merge</a><a href="#bodysuit">Bodysuit</a><a href="#runway">Reels</a><a href="#brands">Brand work</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
   </header>
 
   <div class="hero">
@@ -311,6 +337,21 @@ section{padding-top:clamp(72px,10vw,128px)}
       <figure><img src="media/p-ed2.jpg" alt="Model in the knit vest, balloon sleeve waffle shirt and mini skirt among palms" loading="lazy" data-lb="Lookbook: knit vest, balloon sleeve shirt and mini skirt"><figcaption>Lookbook, full look</figcaption></figure>
       <figure><img src="media/p-expo.jpg" alt="Nabeela at her stand at the AOD Emerging Designer Exhibition, Sri Lanka Design Festival, with a ruched sleeve piece from the collection" loading="lazy" data-lb="Emerging Designer Exhibition, Sri Lanka Design Festival"><figcaption>Emerging Designer Exhibition, Sri Lanka Design Festival</figcaption></figure>
     </div>
+    <div class="sub">
+      <div class="subhead"><p class="rule cap">From sketch to runway</p><h3>Line up &amp; flats</h3><p>The six looks as illustrated, then drawn flat for production</p></div>
+      <figure class="paper"><img src="media/col-lineup.jpg" alt="Illustrated line up of the six looks in the final collection" loading="lazy" data-lb="Final collection: illustrated line up"><figcaption>Illustrated line up</figcaption></figure>
+      <div class="flats">
+        <figure class="paper"><img src="media/col-flats-1.jpg" alt="Flat drawings, front and back, for three looks from the final collection" loading="lazy" data-lb="Final collection: flat drawings"><figcaption>Flat drawings</figcaption></figure>
+        <figure class="paper"><img src="media/col-flats-2.jpg" alt="Flat drawings, front and back, for the remaining three looks" loading="lazy" data-lb="Final collection: flat drawings"><figcaption>Flat drawings</figcaption></figure>
+      </div>
+    </div>
+    <div class="sub">
+      <div class="subhead"><p class="rule cap">Behind the scenes</p><h3>On Set</h3><p>Moments from directing the shoot</p></div>
+      <div class="bts">
+        <figure><video src="media/bts-1.mp4" poster="media/bts-1.jpg" controls playsinline loop preload="none"></video><figcaption>Directing the campaign shoot</figcaption></figure>
+        <figure><video src="media/bts-2.mp4" poster="media/bts-2.jpg" controls playsinline loop preload="none"></video><figcaption>On set, styling and direction</figcaption></figure>
+      </div>
+    </div>
   </section>
 
   <section id="merge">
@@ -329,6 +370,7 @@ section{padding-top:clamp(72px,10vw,128px)}
       <button type="button" class="spread" data-src="media/merge-05.jpg" data-lb="Merge · Range plan"><img src="media/merge-05.jpg" alt="Merge project page: Range plan" loading="lazy"><span>Range plan</span></button>
       <button type="button" class="spread" data-src="media/merge-04.jpg" data-lb="Merge · Gestured line up"><img src="media/merge-04.jpg" alt="Merge project page: Gestured line up" loading="lazy"><span>Gestured line up</span></button>
       <button type="button" class="spread" data-src="media/merge-07.jpg" data-lb="Merge · Flat drawings, looks 3 &amp; 4"><img src="media/merge-07.jpg" alt="Merge project page: Flat drawings, looks 3 &amp; 4" loading="lazy"><span>Flat drawings, looks 3 &amp; 4</span></button>
+      <button type="button" class="spread" data-src="media/merge-flats56.jpg" data-lb="Merge · Flat drawings, looks 5 &amp; 6"><img src="media/merge-flats56.jpg" alt="Merge project page: Flat drawings, looks 5 &amp; 6" loading="lazy"><span>Flat drawings, looks 5 &amp; 6</span></button>
       <button type="button" class="spread" data-src="media/merge-13.jpg" data-lb="Merge · Design developments"><img src="media/merge-13.jpg" alt="Merge project page: Design developments" loading="lazy"><span>Design developments</span></button>
       <button type="button" class="spread" data-src="media/merge-16.jpg" data-lb="Merge · Design developments, sketches"><img src="media/merge-16.jpg" alt="Merge project page: Design developments, sketches" loading="lazy"><span>Design developments, sketches</span></button>
       <button type="button" class="spread" data-src="media/merge-17.jpg" data-lb="Merge · Print exploration board"><img src="media/merge-17.jpg" alt="Merge project page: Print exploration board" loading="lazy"><span>Print exploration board</span></button>
@@ -336,6 +378,19 @@ section{padding-top:clamp(72px,10vw,128px)}
       <button type="button" class="spread" data-src="media/merge-11.jpg" data-lb="Merge · Written concept"><img src="media/merge-11.jpg" alt="Merge project page: Written concept" loading="lazy"><span>Written concept</span></button>
     </div>
     <p class="hint">Scroll for more pages, tap any page to enlarge</p>
+  </section>
+
+  <section id="bodysuit">
+    <div class="sh"><p class="rule cap">Autumn/Winter 2023 · Construction project</p><h2>The Ruffle Bodysuit</h2><p>A tight fitted bodysuit in four way stretch, edged with sculpted organza ruffles</p></div>
+    <div class="bs">
+      <figure class="paper tall"><img src="media/bs-shoot.jpg" alt="Three photos of the finished white bodysuit with organza ruffles, front, back and side" loading="lazy" data-lb="Ruffle Bodysuit: the finished piece"><figcaption>The finished piece, front, back and side</figcaption></figure>
+      <figure class="paper"><img src="media/bs-spec.jpg" alt="Specification sheet: Autumn/Winter 2023 bodysuit, size 6 sample, four way stretch and organza, Pantone 2627 C and Snow White" loading="lazy" data-lb="Ruffle Bodysuit: specification sheet"><figcaption>Specification sheet and colourway</figcaption></figure>
+      <div class="stack">
+        <figure class="paper"><img src="media/bs-sketch.jpg" alt="Sketch of the ruffle panel beside a photo of the frills attached to the bodysuit" loading="lazy" data-lb="Ruffle Bodysuit: from sketch to sample"><figcaption>Sketch to sample</figcaption></figure>
+        <figure class="paper"><img src="media/bs-sewing.jpg" alt="Attaching the organza ruffles to the sleeve on an industrial sewing machine" loading="lazy" data-lb="Ruffle Bodysuit: attaching the ruffles"><figcaption>Attaching the ruffles</figcaption></figure>
+      </div>
+    </div>
+    <div class="facts"><span>Four way stretch</span><span>Organza ruffles</span><span>Size 6 sample</span><span>Pantone 2627 C &amp; Snow White</span></div>
   </section>
 </div>
 
@@ -557,5 +612,6 @@ section{padding-top:clamp(72px,10vw,128px)}
 })();
 </script>
 
+</body></html>
 </body>
 </html>
